@@ -35,10 +35,21 @@ openbabel==3.3.1 (conda install -c conda-forge openbabel)
 
 ## Step-by-step running:  
 
-### 1. Reproduce the reported results
-The data folder contains heterogeneous graphs after preprocessing for 2013 and 2016 core sets. Therefore, run test.py using `python preprocessing.py` can obtain the results reported in our study ( $R_p=0.850$ for 2013 core set, $R_p=0.861$ for 2016 core set). If you preprocess the 2019 holdout set correctly, you can also obtain $R_p=0.655$ for the 2019 holdout set.
+### 1. Model training
+Firstly, download the preprocessed datasets from https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link, and put them into this folder and organize them as './data/train', './data/valid', './data/test2013/', './data/test2016/', and  './data/test2019/'.
+Secondly, run train.py using `python train.py`.  
 
-### 2. Test the trained model in other external test sets
+### 2. Model testing
+Run test.py using `python test.py`.  
+You may need to modify some file paths in the source code before running it.
+
+### 3. Process raw data
+We provide a demo to explain how to process the raw data. This demo use ./data/toy_examples.csv and ./data/toy_set/ as examples.
+Firstly, run preprocess_complex.py using `python preprocess_complex.py`.  
+Secondly, run graph_constructor.py using `python graph_constructor.py`.  
+Thirdly, run train.py using `python train.py`.  
+
+### 4. Test the trained model in other external test sets
 Firstly, please organize the data as a structure similar to './data/toy_set' folder.  
 -data  
 &ensp;&ensp;-external_test  
@@ -50,14 +61,4 @@ Thirdly, run graph_constructor.py using `python graph_constructor.py`.
 Fourth, run test.py using `python test.py`.  
 You may need to modify some file paths in the source code before running it.
 
-### 3. Train EHIGN from scratch
-Firstly, please organize the data as a structure similar to './data/toy_set' folder.  
--data  
-&ensp;&ensp;-train  
-&ensp; &ensp;&ensp;&ensp; -pdb_id  
-&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_ligand.mol2  
-&ensp; &ensp; &ensp;&ensp;&ensp;&ensp;-pdb_id_protein.pdb  
-Secondly, run preprocess_complex.py using `python preprocess_complex.py`.  
-Thirdly, run graph_constructor.py using `python graph_constructor.py`.  
-Fourth, run train.py using `python train.py`.  
-You may need to modify some file paths in the source code before running it.
+
