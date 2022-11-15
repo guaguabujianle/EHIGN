@@ -36,18 +36,18 @@ openbabel==3.3.1 (conda install -c conda-forge openbabel)
 ## Step-by-step running:  
 
 ### 1. Model training
-Firstly, download the preprocessed datasets from https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link, and put them into this folder and organize them as './data/train', './data/valid', './data/test2013/', './data/test2016/', and  './data/test2019/'.
+Firstly, download the preprocessed datasets from https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link, and put them into this folder and organize them as './data/train', './data/valid', './data/test2013/', './data/test2016/', and  './data/test2019/'.  
 Secondly, run train.py using `python train.py`.  
 
 ### 2. Model testing
-Run test.py using `python test.py`.  
+Run test.py using `python test.py`.    
 You may need to modify some file paths in the source code before running it.
 
 ### 3. Process raw data
-We provide a demo to explain how to process the raw data. This demo use ./data/toy_examples.csv and ./data/toy_set/ as examples.
-Firstly, run preprocess_complex.py using `python preprocess_complex.py`.  
+We provide a demo to explain how to process the raw data. This demo use ./data/toy_examples.csv and ./data/toy_set/ as examples.  
+Firstly, run preprocess_complex.py using `python preprocess_complex.py`.    
 Secondly, run graph_constructor.py using `python graph_constructor.py`.  
-Thirdly, run train.py using `python train.py`.  
+Thirdly, run train.py using `python train_example.py`.    
 
 ### 4. Test the trained model in other external test sets
 Firstly, please organize the data as a structure similar to './data/toy_set' folder.  
@@ -59,6 +59,6 @@ Firstly, please organize the data as a structure similar to './data/toy_set' fol
 Secondly, run preprocess_complex.py using `python preprocess_complex.py`.  
 Thirdly, run graph_constructor.py using `python graph_constructor.py`.  
 Fourth, run test.py using `python test.py`.  
-You may need to modify some file paths in the source code before running it.
+You may need to modify some file paths in the source code before running it.  
 
 
