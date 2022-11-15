@@ -20,6 +20,11 @@ openbabel==3.3.1 (conda install -c conda-forge openbabel)
 
 ## Descriptions of folders and files
 + **./data**: This folder contains information about train, valid, test2013, test2016, and test2019 data sets. You should first download the preprocessed datasets from https://drive.google.com/file/d/1oGUP4z7htNXyxTqx95HNSDLsaoxa3fX7/view?usp=share_link, and put them into this folder and organize them as './data/train', './data/valid', './data/test2013/', './data/test2016/', and  './data/test2019/'. We also provide a toy set with 50 examples to explain how to process raw data and train EHIGN model from scratch. 
++ **./config**: Parameters used in EHIGN.
++ **./log**: Logger.
++ **./model**: A folder contains model checkpoints and records about the training processing.
++ **CIGConv.py**: The implementation of CIGConv.
++ **NIGConv.py**: The implementation of NIGConv.
 + **EHIGN.py**: The implementation of EHIGN.
 + **HGN.py**: The implementation of the heterogeneous graph neural network, where most of the contents are copied from the source code of dgl, but we have made some modifications so that it can process edge features.
 + **preprocess_complex.py**: Prepare input complexes. The input ligand and protein should be .mol2 and .pdb formats, respectively. Proteins are first cropped around the ligand within 5 angstrom using pymol. Each protein and ligand is then processed into a protein-ligand complex using rdkit (i.e., a tuple that contains a ligand and a protein).
